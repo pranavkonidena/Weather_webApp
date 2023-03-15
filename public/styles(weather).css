@@ -1,0 +1,54 @@
+body{
+    background-color: #FEFFDE;
+}
+
+#city{
+    font-size: 4rem;
+    position: relative;
+    bottom: 4.6rem;
+}
+
+#temp{
+    font-size: 5rem;
+    position: relative;
+    bottom: 17rem;
+    left: 13rem;
+    padding-left: 2rem;
+}
+
+#img{
+    height: 10rem;
+    width: 10rem;
+    position: relative;
+    left: 5.3rem;
+}
+
+.as{
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    position: relative;
+    right: 3rem
+}
+
+#desc{
+    position: relative;
+    bottom: 22rem;
+    left: 2rem;
+    font-size: 2rem;
+}
+
+#feels{
+    position: relative;
+    bottom: 24.6rem;
+    left: 8rem;
+    font-size: 2rem;
+}
+
+
+.asa{
+    position: relative;
+    bottom: 25rem;
+    text-align: center;
+    position: relative;
+    left: 2.7rem;
+}

@@ -1,0 +1,98 @@
+body{
+    
+   background-color: #FEFFDE;
+}
+
+#tagline{
+    font-size: 6rem;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+    
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid rgb(209, 206, 202); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    position: relative;
+    left: 33rem;
+    top: 2rem;
+    padding-bottom: 1rem;
+}
+
+#inputbox {
+    width: 30rem;
+    height: 30rem;
+    border-style: none;
+    position: absolute;
+    left: 30rem;
+    bottom: 3rem;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color:#FEFFDE; }
+  }
+
+  #form{
+    position: relative;
+    top:3rem;
+    left: 10rem;
+  }
+
+  #city{
+    font-size: 3rem;
+    font-family: 'Shadows Into Light', cursive;
+  }
+
+
+  #submit{
+    position: relative;
+    top: 2.7rem;
+    left: 2.5rem;
+    font-size: 20px;
+    margin-left: 0.5rem;
+  }
+
+  #textarea{
+    position: relative;
+    top: 2.5rem;
+    left: 1.5rem;
+    height: 20px;
+    width: 200px;
+    
+  }
+
+  #cl{
+    position: relative;
+    top: 2.7rem;
+    right: 3rem;
+    font-size: 20px;
+
+    
+
+    
+  }
+
+  #taglineb{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3rem;
+    position: relative;
+    left: 16rem;
+    
+  }
+
+ #m{
+  position: relative;
+  top: 4rem;
+  left: 4rem;
+  font-size: 2rem;
+ }

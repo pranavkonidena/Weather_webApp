@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles(weather).css">
+</head>
+<body>
+
+    <div class = "as">
+        <img src="/<%=data.weather[0].icon%>.png" alt="" id = "img">
+        <p id = "city"><%=data.name%> , </p>
+        <p id = "temp"><%=data.main.temp%> C</p>
+        <p id = "desc"><%=data.weather[0].description%></p>
+        <p id = "feels">feels like: <%=data.main.feels_like%> C</p>
+    </div>
+
+    <div class = "asa">
+        <p id = "sunrisetime"></p>
+        <p id = "sunsettime"></p>
+        <p id = "currenttime"></p>
+    
+    
+    
+    
+        <p>The minimum temperature today is: <%=data.main.temp_min%> C</p>
+        <p>The maximum temperature today is: <%=data.main.temp_max%> C</p>
+        <p>Visbility: <%=data.visibility%> m</p>
+        <p>Humidity: <%=data.main.humidity%> %</p>
+        <p>Wind speed is: <%=data.wind.speed%> m/s at <%=data.wind.deg%> degrees</p>
+        <p>Cloudiness : <%=data.clouds.all%> %</p>
+
+        <p>Feeling lucky? Try a song that suits the weather</p>
+        <button onclick = "getsong()">Try a song</button>
+
+     
+
+    </div>
+    
+    
+  
+
+
+    
+   
+
+    <script>
+        let x = document.getElementById('sunrisetime');
+        let y = document.getElementById("sunsettime");
+        let z = document.getElementById("currenttime")
+        let sunrise = <%=data.sys.sunrise%>;
+        let sunset = <%=data.sys.sunset%>;
+        let time_now = <%=data.dt%>;
+        var date = new Date(sunrise * 1000);
+        var datee = new Date(sunset*1000);
+        var dateee = new Date(time_now*1000);
+        
+
+        x.innerHTML = "Sunrise : " + date.toLocaleTimeString("default") + " IST";
+        y.innerHTML = "Sunset : " + datee.toLocaleTimeString("default") + " IST";
+        z.innerHTML = "Time now is: " + dateee.toLocaleTimeString("default") + " IST";
+
+
+
+        
+
+        function getsong() {
+            
+            let clear_sky_songs = ["https://www.youtube.com/watch?v=MXJCnccDLA0" , "https://www.youtube.com/watch?v=aSU74fpWsfQ"];
+            let rain_songs = ["https://www.youtube.com/watch?v=BtlnpBb4O8E" , "https://www.youtube.com/watch?v=xO3sTaCsJAI"];
+            let cloudy_songs = ["https://www.youtube.com/watch?v=V91GRYjlR2I" , "https://www.youtube.com/watch?v=pllRW9wETzw"]
+            var num = Math.random()*2;
+            var number = Math.floor(num);
+            let clear_sky_song = clear_sky_songs[number];
+            let rain_sky_song = rain_songs[number];
+            let cloudy_song = cloudy_songs[number]
+        
+
+            if("<%=data.weather[0].icon%>" == "01d" || "<%=data.weather[0].icon%>" == "01n" || "<%=data.weather[0].icon%>" == "02d" || "<%=data.weather[0].icon%>" == "02n"){
+                window.open(clear_sky_song);
+            }
+            else if("<%=data.weather[0].icon%>" == "03d" || "<%=data.weather[0].icon%>" == "03n" || "<%=data.weather[0].icon%>" == "04d" || "<%=data.weather[0].icon%>" == "04n"){
+                window.open(cloudy_song);
+            }
+            else{
+                window.open(rain_sky_song);
+            }
+        }
+        
+    </script>
+</body>
+</html>
+
